@@ -1,0 +1,42 @@
+<div
+  igxLayout
+  igxLayoutDir="row"
+  igxLayoutJustify="center"
+  igxLayoutWrap="wrap"
+>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Sec A
+    <igx-switch [checked]="sections.A" (change)="handleSection('A')">
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Sec B
+    <igx-switch [checked]="sections.B" (change)="handleSection('B')">
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Sec C
+    <igx-switch [checked]="sections.C" (change)="handleSection('C')">
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Sec D
+    <igx-switch [checked]="sections.D" (change)="handleSection('D')">
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Sec E
+    <igx-switch [checked]="sections.E" (change)="handleSection('E')">
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Coe A
+    <igx-switch [checked]="sections.CoeA" (change)="handleSection('CoeA')">
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Coe B
+    <igx-switch [checked]="sections.CoeB" (change)="handleSection('CoeB')">
+    </igx-switch>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.list-card {
+  display: inline-flex;
+  margin-top: 0.5%;
+  width: 49%;
+}
+
+.list-image {
+  width: 140px;
+  height: 180px;
+  margin-right: 100px;
+  display: inline-block;
+}
+.list-title {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 600px) {
+  .list-image {
+    width: 115px;
+    height: 140px;
+  }
+  .list-title {
+    margin-bottom: 2px;
+  }
+  .list-card {
+    width: 100% !important;
+  }
+}
+
+.success {
+  color: green;
+}
+
+.danger {
+  color: red;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}

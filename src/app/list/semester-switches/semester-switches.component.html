@@ -1,0 +1,17 @@
+<div
+  igxLayout
+  igxLayoutDir="row"
+  igxLayoutJustify="center"
+  igxLayoutWrap="wrap"
+  style="margin-top: 20px; margin-bottom: 20px;"
+>
+  <div
+    igxLayout
+    igxLayoutDir="column"
+    class="switch"
+    *ngFor="let semester of numbers"
+  >
+    Sem {{ semester + 1 }}
+    <igx-switch (change)="handleChange(semester)"> </igx-switch>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+app-list-card:nth-of-type(even) {
+  margin-left: 2%;
+}
+
+@media only screen and (max-width: 600px) {
+  app-list-card {
+    margin-left: 0 !important;
+  }
+}

@@ -1,0 +1,38 @@
+<igx-card class="list-card" [horizontal]="true" [id]="record.roll">
+  <igx-card-media>
+    <picture (click)="toggle()">
+      <source [srcset]="getWebpImage()" type="image/webp" />
+      <source [srcset]="getJpegImage()" type="image/jpeg" />
+      <img class="list-image" [src]="getJpegImage()" alt="Loading Image" />
+    </picture>
+  </igx-card-media>
+
+  <igx-card-content>
+    <h1 igxCardHeaderTitle class="list-title">
+      <a
+        class="card-link"
+        routerLink="/report"
+        [queryParams]="{ roll: record.roll }"
+        >{{ record.name }}</a
+      >
+      <h5 igxCardHeaderSubtitle>{{ record.roll }}/{{ record.section }}</h5>
+    </h1>
+
+    <p
+      [className]="record.marks > avgMarks ? 'success' : 'danger'"
+      (click)="showToast()"
+    >
+      Marks: {{ record.marks }}
+    </p>
+    <p
+      [className]="record.sgpa > avgCgpa ? 'success' : 'danger'"
+      (click)="showToast()"
+    >
+      CGPA: {{ record.sgpa }}
+    </p>
+    <p *ngIf="record.cpCount">CP: {{ record.cp.length }}</p>
+    <p>Percent: {{ record.percentage }}</p>
+
+    <p *ngIf="record.rank">Rank: {{ record.rank }}</p>
+  </igx-card-content>
+</igx-card>

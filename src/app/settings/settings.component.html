@@ -1,0 +1,16 @@
+<div class="text-center">
+  <p>Data last updated on Server: {{ lastUpdated }}</p>
+  <button igxButton="outlined" (click)="updateData()">Update</button>
+  <p>Theme: {{ theme }}</p>
+  <igx-buttongroup style="justify-content: center; display: flex;">
+    <button igxButton (click)="setTheme('Light')">
+      <igx-icon>wb_sunny</igx-icon>
+    </button>
+    <button igxButton (click)="setTheme('Dark')">
+      <igx-icon>nights_stay</igx-icon>
+    </button>
+    <button igxButton (click)="setTheme('Automatic')">
+      <igx-icon>history</igx-icon>
+    </button>
+  </igx-buttongroup>
+</div>

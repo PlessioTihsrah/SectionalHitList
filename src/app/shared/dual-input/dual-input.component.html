@@ -1,0 +1,25 @@
+<form (submit)="handleSubmit($event)" class="form-group">
+  <igx-input-group class="form-input">
+    <input
+      igxInput
+      name="inputOne"
+      type="number"
+      autocomplete="off"
+      (change)="valueOne = $event.target.value"
+      required
+    />
+    <label igxLabel for="inputOne">{{ labelOne }}</label>
+  </igx-input-group>
+  <igx-input-group class="form-input">
+    <input
+      igxInput
+      name="inputTwo"
+      type="number"
+      autocomplete="off"
+      (change)="valueTwo = $event.target.value"
+      required
+    />
+    <label igxLabel for="inputTwo">{{ labelTwo }}</label>
+  </igx-input-group>
+  <button style="display: none;"></button>
+</form>

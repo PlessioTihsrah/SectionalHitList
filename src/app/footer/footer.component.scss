@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+.footer-item {
+  text-align: center;
+  line-height: 125%;
+  overflow-y: hidden;
+}
+
+.footer-item:hover {
+  cursor: pointer;
+}

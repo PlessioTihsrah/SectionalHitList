@@ -1,0 +1,13 @@
+<app-dual-input
+  labelOne="Enter Roll Number"
+  labelTwo="Percentage for Final Year"
+  (submitted)="handleSubmit($event)"
+></app-dual-input>
+
+<div *ngIf="predicted" class="text-center">
+  <h1 *ngIf="predicted < 0 || predicted > 100">Impossible Now.</h1>
+  <h2 *ngIf="predicted > 0 && predicted < 100">
+    You need {{ predicted / 100 | percent: "2.0-2" }} <br />
+    in all upcoming semesters
+  </h2>
+</div>

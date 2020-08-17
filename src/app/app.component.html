@@ -1,0 +1,9 @@
+<div *ngIf="data">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</div>
+<div *ngIf="!data">
+  <app-fetching></app-fetching>
+</div>

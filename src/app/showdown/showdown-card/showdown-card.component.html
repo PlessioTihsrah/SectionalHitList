@@ -1,0 +1,29 @@
+<div style="display: block;">
+  <igx-select (onSelection)="generateData($event.newSelection.value)">
+    <label igxLabel>ShowDown For</label>
+    <igx-select-item value="marks">Marks</igx-select-item>
+    <igx-select-item value="cgpa">CGPA</igx-select-item>
+    <igx-select-item value="cp">Carry Papers</igx-select-item>
+  </igx-select>
+  <div class="graph">
+  <canvas
+    baseChart
+    [datasets]="data"
+    [labels]="labels"
+    [options]="{
+      responsive: true,
+      legend: {
+        position: 'bottom',
+        labels: {
+          usePointStyle: true,
+          boxWidth: 2
+        }
+      }
+    }"
+    [colors]="[{ borderColor: 'green' }, { borderColor: 'red' }]"
+    [legend]="true"
+    chartType="line"
+  >
+  </canvas>
+  </div>
+</div>

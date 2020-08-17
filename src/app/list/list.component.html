@@ -1,0 +1,33 @@
+<igx-card>
+  <app-section-switches
+    [sections]="sections"
+    (changeSection)="changeSection($event)"
+  ></app-section-switches>
+  <app-semester-switches
+    [semesters]="semLen"
+    (changeSem)="changeSem($event)"
+  ></app-semester-switches>
+  <app-sort-switches
+    [sortBy]="sortBy"
+    (changeSort)="changeSort($event)"
+  ></app-sort-switches>
+  <app-search-bar
+    label="Search Roll Number"
+    (submitted)="searchByRoll($event)"
+  ></app-search-bar>
+</igx-card>
+<div *ngIf="showCards()">
+  <ng-container *ngFor="let record of data; let i = index">
+    <app-list-card
+      [record]="record"
+      [avgMarks]="avgMarks"
+      [avgCgpa]="avgCgpa"
+      (toast)="toast.show()"
+    >
+    </app-list-card>
+  </ng-container>
+  <igx-toast #toast message="Green: Above Avg. Red: Below Avg"></igx-toast>
+</div>
+<div *ngIf="!showCards()" style="text-align: center;">
+  Please select Semester and Section
+</div>

@@ -1,0 +1,10 @@
+<app-dual-input
+  labelOne="Enter First Roll Number"
+  labelTwo="Enter Second Roll Number"
+  (submitted)="handleSubmit($event)"
+></app-dual-input>
+<app-showdown-card
+  *ngIf="user1 && user2"
+  [user1]="user1"
+  [user2]="user2"
+></app-showdown-card>

@@ -1,0 +1,5 @@
+<app-search-bar
+  (submitted)="handleSubmit($event)"
+  label="Enter Roll No"
+></app-search-bar>
+<app-report-card *ngIf="data" [data]="data"></app-report-card>

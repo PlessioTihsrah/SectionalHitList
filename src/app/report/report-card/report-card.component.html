@@ -1,0 +1,47 @@
+<igx-card>
+  <igx-card-header style="text-align: center;">
+    <igx-card-media height="150px" width="120px">
+      <picture (click)="toggle()">
+        <source [srcset]="getWebpImage()" type="image/webp" />
+        <source [srcset]="getJpegImage()" type="image/jpeg" />
+        <img class="list-image" [src]="getJpegImage()" alt="Loading Image" />
+      </picture>
+    </igx-card-media>
+    <h3 igxCardHeaderTitle style="font-size: x-large; margin-bottom: 20px;">
+      {{ data.name }}
+    </h3>
+    <h5 igxCardHeaderSubtitle>
+      <div>
+        <div>Marks</div>
+        <div>{{ sum(data.marks) }}</div>
+      </div>
+      <div>
+        <div>CGPA</div>
+        <div>{{ sum(data.cgpa) / data.cgpa.length | number: "1.0-2" }}</div>
+      </div>
+      <div>
+        <div>Percentage</div>
+        <div>{{ sum(data.marks) / sum(data.total) | percent: "2.0-2" }}</div>
+      </div>
+      <div>
+        <div>CP</div>
+        <div>{{ calculateCP().length }}</div>
+      </div>
+    </h5>
+  </igx-card-header>
+  <igx-card-content>
+    <ng-container *ngFor="let sem of data.semesterRecord; let i = index">
+      <app-report-card-expansion
+        [total]="data.total[i]"
+        [cgpa]="data.cgpa[i]"
+        [marks]="data.marks[i]"
+        [cp]="data.cp[i]"
+        [semester]="i + 1"
+        [semesterRecord]="sem"
+      ></app-report-card-expansion>
+    </ng-container>
+  </igx-card-content>
+  <igx-card-content>
+    <app-report-graph [graphData]="graphData"></app-report-graph>
+  </igx-card-content>
+</igx-card>

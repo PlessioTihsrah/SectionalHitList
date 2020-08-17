@@ -1,0 +1,55 @@
+// CSS Reset, comment out if not required or using a different module
+@import "~minireset.css/minireset";
+/* You can add global styles to this file, and also import other style files */
+
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+/* autoprefixer grid: on */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@include igx-core();
+
+.light-theme {
+  @include igx-light-theme($default-palette);
+  background-color: #fff;
+}
+
+.dark-theme {
+  background: #000;
+  color: #fff;
+  @include igx-dark-theme(igx-palette($primary: #3282b8, $secondary: #bbe1fa));
+}
+
+.switch {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .switch {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.text-center {
+  text-align: center !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.active {
+  color: #00adb5;
+}
+.container {
+  margin: 1.5%;
+
+  margin-bottom: 70px;
+}

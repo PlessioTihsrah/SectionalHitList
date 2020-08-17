@@ -1,0 +1,12 @@
+<form (submit)="handleSubmit($event)">
+  <igx-input-group>
+    <input
+      igxInput
+      name="roll"
+      type="number"
+      autocomplete="off"
+      (change)="value = $event.target.value"
+    />
+    <label igxLabel for="roll">{{ label }}</label>
+  </igx-input-group>
+</form>

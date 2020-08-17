@@ -1,0 +1,49 @@
+<igx-expansion-panel>
+  <igx-expansion-panel-header style="border: 0.5px solid grey;">
+    <igx-expansion-panel-title style="font-size: medium; text-align: center;">
+      <div style="font-size: larger;">Semester {{ semester }}</div>
+      <div
+        style="display: flex; justify-content: space-between; flex-wrap: wrap;"
+      >
+        <span>Marks: {{ marks }} </span>
+        <span>Cgpa: {{ cgpa }} </span>
+        <span>Cp: {{ this.cp ? this.cp.length : 0 }}</span>
+        <span>Percent: {{ marks / total | percent: "2.0-2" }}</span>
+      </div>
+    </igx-expansion-panel-title>
+  </igx-expansion-panel-header>
+  <igx-expansion-panel-body>
+    <table>
+      <tr>
+        <th>Code</th>
+        <th>Subject</th>
+        <th>Int.</th>
+        <th>Ext.</th>
+        <th>Grade</th>
+      </tr>
+      <tr *ngFor="let record of semesterRecord" [class]="record.grade[0]">
+        <td>{{ record.code }}</td>
+        <td>{{ record.subject }}</td>
+        <td>{{ record.internalMarks }}</td>
+        <td>{{ record.externalMarks }}</td>
+        <td>{{ record.grade }}</td>
+      </tr>
+    </table>
+  <div class="bar">
+    <canvas
+      class="report-bar"
+      baseChart
+      [datasets]="this.datasets"
+      [labels]="this.labels"
+      chartType="horizontalBar"
+      [options]="{
+        responsive: true,
+        legend: { display: false },
+        scales: {
+          xAxes: [{ ticks: { beginAtZero: true } }]
+        }
+      }"
+    ></canvas>
+  </div>
+  </igx-expansion-panel-body>
+</igx-expansion-panel>

@@ -1,0 +1,26 @@
+<div class="graph">
+  <canvas
+    baseChart
+    [datasets]="graphData.data"
+    [labels]="graphData.labels"
+    [options]="{
+      responsive: true,
+      scales: { yAxes: [{ display: false }] },
+      legend: {
+        position: 'bottom',
+        labels: {
+          usePointStyle: true,
+          boxWidth: 2
+        }
+      }
+    }"
+    [colors]="[
+      { borderColor: 'green' },
+      { borderColor: 'red' },
+      { borderColor: 'blue' }
+    ]"
+    [legend]="true"
+    chartType="line"
+  >
+  </canvas>
+</div>

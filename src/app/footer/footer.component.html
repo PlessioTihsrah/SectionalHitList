@@ -1,0 +1,12 @@
+<igx-card class="footer" [horizontal]="true">
+  <ng-container *ngFor="let button of buttons">
+    <div
+      class="footer-item"
+      [routerLink]="button.url"
+      routerLinkActive="active"
+    >
+      <igx-icon>{{ button.icon }}</igx-icon>
+      <div class="text-center">{{ button.name }}</div>
+    </div>
+  </ng-container>
+</igx-card>

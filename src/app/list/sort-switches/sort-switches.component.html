@@ -1,0 +1,27 @@
+<div
+  igxLayout
+  igxLayoutDir="row"
+  igxLayoutJustify="center"
+  igxLayoutWrap="wrap"
+>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    Marks
+    <igx-switch
+      name="marks"
+      id="marks"
+      [checked]="sortBy === 'marks'"
+      (change)="handleChange('marks')"
+    >
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    SGPA
+    <igx-switch [checked]="sortBy === 'sgpa'" (change)="handleChange('sgpa')">
+    </igx-switch>
+  </div>
+  <div igxLayout igxLayoutDir="column" class="switch">
+    CP
+    <igx-switch [checked]="sortBy === 'cp'" (change)="handleChange('cp')">
+    </igx-switch>
+  </div>
+</div>
